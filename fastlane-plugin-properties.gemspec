@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'pavlo.pakholka@bolt.eu'
 
   spec.summary       = 'Adds 4 actions to fastlane to read and update properties files.'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-properties"
+  spec.homepage      = "https://github.com/Kerizer/fastlane-plugin-properties"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
