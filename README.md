@@ -13,6 +13,7 @@ fastlane add_plugin properties
 ## About properties
 
 Adds 2 actions to fastlane to read and update properties files.
+Adds 2 actions to read/write the whole properties file.
 Adds 2 more actions to increase versionCode and versionName fast.
 
 ## Example
@@ -42,6 +43,16 @@ lane :test do
   
   # Increase VERSION_NAME's minor value in Configs/versions.properties by 1
   # update_type can be one of ['major', 'minor', 'patch']. Default to 'minor'
+  increment_version_name_in_properties_file(
+    key: "VERSION_NAME",
+    path: "./Configs/versions.properties",
+    update_type: "minor"
+  )
+
+  content = parse_properties_file(
+    path: "./Configs/versions.properties"
+  )
+
   increment_version_name_in_properties_file(
     key: "VERSION_NAME",
     path: "./Configs/versions.properties",

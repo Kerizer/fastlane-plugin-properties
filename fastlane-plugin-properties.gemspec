@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   # Don't add a dependency to fastlane or fastlane_re
   # since this would cause a circular dependency
 
-  spec.add_dependency 'java-properties'
+  spec.add_dependency('java-properties')
 
   spec.add_development_dependency('pry')
   spec.add_development_dependency('bundler')
