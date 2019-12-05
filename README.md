@@ -16,6 +16,8 @@ Adds 2 actions to fastlane to read and update properties files.
 Adds 2 actions to read/write the whole properties file.
 Adds 2 more actions to increase versionCode and versionName fast.
 
+Your file does not require to be `.properties`. This plugin can work with any file which content is in the `KEY=VALUE` format, ie `.env` files or etc.
+
 ## Example
 
 ```ruby
@@ -49,14 +51,15 @@ lane :test do
     update_type: "minor"
   )
 
+  # Read the versions.properties file and sttore it as a hash-map in the content variable
   content = parse_properties_file(
     path: "./Configs/versions.properties"
   )
 
-  increment_version_name_in_properties_file(
-    key: "VERSION_NAME",
+  # Rewrites your versions.properties with new data, generated from some_hash
+  write_properties_file(
     path: "./Configs/versions.properties",
-    update_type: "minor"
+    hash: some_hash
   )
 
 end
