@@ -3,7 +3,7 @@ require 'java-properties'
 
 module Fastlane
   module Actions
-    class ParsePropertiesFileAction < Action
+    class WritePropertiesFileAction < Action
       def self.run(params)
         content = JavaProperties.write(params[:hash], params[:path])
         return content
