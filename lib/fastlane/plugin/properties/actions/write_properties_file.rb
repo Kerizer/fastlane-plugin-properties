@@ -3,7 +3,7 @@ require 'java-properties'
 
 module Fastlane
   module Actions
-    class ParsePropertiesFileAction < Action
+    class WritePropertiesFileAction < Action
       def self.run(params)
         content = JavaProperties.write(params[:hash], params[:path])
         return content
@@ -28,7 +28,7 @@ module Fastlane
 
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :key,
+          FastlaneCore::ConfigItem.new(key: :hash,
             env_name: "PROPERIES_WRITE_HASH_MAP",
             description: "Hashmap you want to convert and write to file",
             optional: false,
