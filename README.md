@@ -33,7 +33,7 @@ lane :test do
   # VERSION_NAME will be added if it doesn't exist
   set_properties_value(
     path: "./Configs/versions.properties",
-    name: "VERSION_NAME",
+    key: "VERSION_NAME",
     value: "0.2.0"
   )
 
